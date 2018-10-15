@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MP01_03_201604140">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="end"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="60px"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="455dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_7"
+                android:text="7"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_8"
+                android:text="8"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_9"
+                android:text="9"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button_slash"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_slash"
+                android:text="/"
+                android:textSize="50px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_4"
+                android:text="4"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_5"
+                android:text="5"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_6"
+                android:text="6"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button_mul"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_mul"
+                android:text="*"
+                android:textSize="50px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_3"
+                android:text="3"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_2"
+                android:text="2"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_1"
+                android:text="1"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button_sub"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_sub"
+                android:text="-"
+                android:textSize="50px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_dot"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_dot"
+                android:text="."
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_0"
+                android:text="0"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button_clear"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_clear"
+                android:text="C"
+                android:textSize="50px" />
+
+            <Button
+                android:id="@+id/button_add"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:onClick="onClick_add"
+                android:text="+"
+                android:textSize="50px" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/equal_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick_equal"
+            android:text="="
+            android:textSize="50px" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
