@@ -23,7 +23,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             return;
         else
             result.setText(r+"0");
@@ -33,7 +33,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("1");
         else
             result.setText(r+"1");
@@ -43,7 +43,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("2");
         else
             result.setText(r+"2");
@@ -53,7 +53,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("3");
         else
             result.setText(r+"3");
@@ -63,7 +63,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("4");
         else
             result.setText(r+"4");
@@ -73,7 +73,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("5");
         else
             result.setText(r+"5");
@@ -83,7 +83,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("6");
         else
             result.setText(r+"6");
@@ -93,7 +93,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("7");
         else
             result.setText(r+"7");
@@ -103,7 +103,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("8");
         else
             result.setText(r+"8");
@@ -113,7 +113,7 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r == "0")// 0일때는 지우고 값을 입력
+        if(r.equals("0"))// 0일때는 지우고 값을 입력
             result.setText("9");
         else
             result.setText(r+"9");
@@ -123,7 +123,9 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r.contains("/"))// 이미 슬래시가 있는 경우
+        if(r.charAt(r.length()-1) == '*' || r.charAt(r.length()-1) == '/' ||
+                r.charAt(r.length()-1) == '+' || r.charAt(r.length()-1) == '-' ||
+                r.charAt(r.length()-1) == '.' )// 마지막 index가 점 또는 사칙연산일 경우
             return;
         result.setText(r+"/");
     }
@@ -131,8 +133,9 @@ public class MP01_03_201604140 extends AppCompatActivity {
     public void onClick_mul(View view) {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
-
-        if(r.contains("*"))// 이미 곱하기가 있는 경우
+        if(r.charAt(r.length()-1) == '*' || r.charAt(r.length()-1) == '/' ||
+                r.charAt(r.length()-1) == '+' || r.charAt(r.length()-1) == '-' ||
+                r.charAt(r.length()-1) == '.' )// 마지막 index가 점 또는 사칙연산일 경우
             return;
         result.setText(r+"*");
     }
@@ -141,7 +144,9 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r.contains("-"))// 이미 빼기가 있는 경우
+        if(r.charAt(r.length()-1) == '*' || r.charAt(r.length()-1) == '/' ||
+                r.charAt(r.length()-1) == '+' || r.charAt(r.length()-1) == '-' ||
+                r.charAt(r.length()-1) == '.' )// 마지막 index가 점 또는 사칙연산일 경우
             return;
         result.setText(r+"-");
     }
@@ -150,11 +155,24 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r.contains("."))// 이미 소수점이 있는 경우
+        if(r.charAt(r.length()-1) == '*' || r.charAt(r.length()-1) == '/' ||
+                r.charAt(r.length()-1) == '+' || r.charAt(r.length()-1) == '-' ||
+                r.charAt(r.length()-1) == '.' )// 마지막 index가 점 또는 사칙연산일 경우
             return;
-        //////////바로 앞이 숫자여야 함
-        result.setText(r+".");
-
+        else if(r.contains(".")) { // 이미 점이 있는 경우
+            // 점이 있는데, 사칙연산을 포함할 경우
+            if(r.contains("+") || r.contains("-") || r.contains("*") || r.contains("/")) {
+                String[] temp_r = r.split("\\+|-|\\*|/"); // 사칙연산을 기준으로 점이 있는지 검사를 위한 임시 변수
+                // 마지막 String이 점을 포함하고 있을 경우
+                if(temp_r[temp_r.length-1].contains(".")) {
+                    return;
+                }
+                else result.setText(r+".");
+            }
+            else return; // 점이 있는데, 사칙연산을 포함하지 않을 경우
+        }
+        else
+            result.setText(r+".");
     }
 
     public void onClick_clear(View view) {
@@ -166,7 +184,9 @@ public class MP01_03_201604140 extends AppCompatActivity {
         TextView result = (TextView)findViewById(R.id.result);
         String r = result.getText().toString();
 
-        if(r.contains("+"))// 이미 더하기가 있는 경우
+        if(r.charAt(r.length()-1) == '*' || r.charAt(r.length()-1) == '/' ||
+                r.charAt(r.length()-1) == '+' || r.charAt(r.length()-1) == '-' ||
+                r.charAt(r.length()-1) == '.' )// 마지막 index가 점 또는 사칙연산일 경우
             return;
         result.setText(r+"+");
     }
@@ -180,7 +200,12 @@ public class MP01_03_201604140 extends AppCompatActivity {
         String valtostring = String.valueOf(result_val);
 
         if(valtostring.contains("."))// 소수점이 있는 경우
-            result.setText(valtostring);
+            if(result_val % 1 == 0) {
+                valtostring = String.valueOf((int)result_val);
+                result.setText(valtostring);
+            }
+            else
+                result.setText(valtostring);
         else { // 소수점이 없는 경우
             valtostring = String.valueOf((int)result_val);
             result.setText(valtostring);
