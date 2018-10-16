@@ -192,23 +192,28 @@ public class MP01_03_201604140 extends AppCompatActivity {
     }
 
     public void onClick_equal(View view) {
-        TextView result = (TextView)findViewById(R.id.result);
-        String r = result.getText().toString();
+        try{
+            TextView result = (TextView)findViewById(R.id.result);
+            String r = result.getText().toString();
 
-        Expression e = new ExpressionBuilder(r).build();
-        double result_val = e.evaluate();
-        String valtostring = String.valueOf(result_val);
-
-        if(valtostring.contains("."))// 소수점이 있는 경우
-            if(result_val % 1 == 0) {
+            Expression e = new ExpressionBuilder(r).build();
+            double result_val = e.evaluate();
+            String valtostring = String.valueOf(result_val);
+            if(valtostring.contains("."))// 소수점이 있는 경우
+                if(result_val % 1 == 0) {
+                    valtostring = String.valueOf((int)result_val);
+                    result.setText(valtostring);
+                }
+                else
+                    result.setText(valtostring);
+            else { // 소수점이 없는 경우
                 valtostring = String.valueOf((int)result_val);
                 result.setText(valtostring);
             }
-            else
-                result.setText(valtostring);
-        else { // 소수점이 없는 경우
-            valtostring = String.valueOf((int)result_val);
-            result.setText(valtostring);
+        }
+        catch (ArithmeticException ee) {
+            return;
+            // 0으로 나누었을 때 등 오류
         }
     }
 }
