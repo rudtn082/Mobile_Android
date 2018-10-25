@@ -16,11 +16,6 @@ import java.util.Calendar;
 
 public class MP01_04_201604140 extends AppCompatActivity {
     final Calendar c = Calendar.getInstance();
-    int mYear = c.get(Calendar.YEAR);
-    int mMonth = c.get(Calendar.MONTH);
-    int mDay = c.get(Calendar.DAY_OF_MONTH);
-    int mHour = c.get(Calendar.HOUR_OF_DAY);
-    int mMinute = c.get(Calendar.MINUTE);
     private static final float FONT_SIZE = 20;
     private LinearLayout container;
 
@@ -31,6 +26,8 @@ public class MP01_04_201604140 extends AppCompatActivity {
     }
 
     private void timepic(final String s) {
+        int mHour = c.get(Calendar.HOUR_OF_DAY);
+        int mMinute = c.get(Calendar.MINUTE);
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -58,6 +55,9 @@ public class MP01_04_201604140 extends AppCompatActivity {
     }
 
     private void datepic() {
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
