@@ -6,14 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".MP_05_201604140">
 
-    <!--<kr.co.company.MyView.MyView-->
-        <!--android.layout_height="match_parent"-->
-        <!--android.layout_width="match_parent" />-->
+    <ImageView
+    android:id="@+id/rocket_image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:src="@drawable/rocket1" />
 
-    <imageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/dog" />
+    <!--<kr.co.company.MyView.MyView-->
+    <!--android.layout_height="match_parent"-->
+    <!--android.layout_width="match_parent" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:src="@drawable/dog" />-->
+
+    <!--11번 실습-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/linearLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/fade"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="fade"-->
+                <!--android:layout_weight="1"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/slide"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="slide"-->
+                <!--android:layout_weight="1"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/explode"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="explode"-->
+                <!--android:layout_weight="1" />-->
+        <!--</LinearLayout>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/dog" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/cat" />-->
+
+    <!--</LinearLayout>-->
 
 </android.support.constraint.ConstraintLayout>
