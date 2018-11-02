@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MP_05_201604140">
 
-    <ImageView
-    android:id="@+id/rocket_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:src="@drawable/rocket1" />
+    <!--<ImageView-->
+    <!--android:id="@+id/rocket_image"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:src="@drawable/rocket1" />-->
 
     <!--<kr.co.company.MyView.MyView-->
     <!--android.layout_height="match_parent"-->

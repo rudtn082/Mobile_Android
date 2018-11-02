@@ -22,16 +22,19 @@ public class MP_05_201604140 extends AppCompatActivity {
     private ImageView imageView;
     boolean visible;
     AnimationDrawable rocketAnimation;
+    MySurfaceView view;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(new MyView_10(this));
-        setContentView(R.layout.activity_mp_05_201604140);
-        ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);
-        rocketImage.setBackgroundResource(R.drawable.values);
-        rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
+        //       setContentView(new MyView_10(this));
+        view = new MySurfaceView(this);
+        setContentView(view);
+
+//        ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);
+//        rocketImage.setBackgroundResource(R.drawable.values);
+//        rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
 
         // 11번 실습
 //        layout = (LinearLayout) findViewById(R.id.linearLayout);
@@ -73,11 +76,20 @@ public class MP_05_201604140 extends AppCompatActivity {
 //        });
     }
 
-    public boolean onTouchEvent(MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-            rocketAnimation.start();
-            return true;
-        }
-        return super.onTouchEvent(event);
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
+
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+//    public boolean onTouchEvent(MotionEvent event) {
+//        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+//            rocketAnimation.start();
+//            return true;
+//        }
+//        return super.onTouchEvent(event);
+//    }
 }
