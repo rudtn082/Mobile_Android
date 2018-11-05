@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="order"
+            android:text="주문하기"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주문내역"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="____________________" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:id="@+id/domino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도미노 피자" />
+
+            <RadioButton
+                android:id="@+id/mr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미스터 피자" />
+
+            <RadioButton
+                android:id="@+id/hut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피자헛" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="전화주문" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="인터넷 주문" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
