@@ -1,5 +1,6 @@
 package com.example.kyungsoo.mp01_07_201604140;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -10,14 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    //Using the Accelometer & Gyroscoper
     private SensorManager mSensorManager = null;
-
-    //Using the Accelometer
     private SensorEventListener mAccLis;
     private Sensor mAccelometerSensor = null;
 
@@ -29,10 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = (TextView)findViewById(R.id.textview);
 
-        //Using the Gyroscope & Accelometer
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        //Using the Accelometer
         mAccelometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mAccLis = new AccelometerListener();
 
@@ -46,18 +46,21 @@ public class MainActivity extends AppCompatActivity {
             double accY = event.values[1];
             double accZ = event.values[2];
 
-            Log.e("LOG", "\n[0] = " + String.format("%.2f", event.values[0])
-                            + "\n[1] = " + String.format("%.2f", event.values[1])
-                            + "\n[2] = " + String.format("%.2f", event.values[2]));
+            Log.d("LOG", "\n[0] = " + String.valueOf(event.values[0])
+                            + "\n[1] = " + String.valueOf(event.values[1])
+                            + "\n[2] = " + String.valueOf(event.values[2]));
 
-            if(event.values[0] == -0 && event.values[1] == -9.81 && event.values[2] == 0) {
-                Log.e("ee", "1");
-                startService(new Intent(getApplicationContext(), MusicStart.class));
+
+            ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+            List<ActivityManager.RunningServiceInfo> procInfos = am.getRunningServices(1);
+
+            if(event.values[1] == -9.8100004196167) {
+                if(procInfos.size() != 1)
+                    startService(new Intent(getApplicationContext(), MusicStart.class));
             }
-
-            if(event.values[0] == 0 && event.values[1] == 9.81 && event.values[2] == 0) {
-                Log.e("ee", "2");
-                stopService(new Intent(getApplicationContext(), MusicStart.class));
+            else if(event.values[1] == 9.8100004196167) {
+                if(procInfos.size() != 0)
+                    stopService(new Intent(getApplicationContext(), MusicStart.class));
             }
         }
 
@@ -70,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause(){
         super.onPause();
-        Log.e("LOG", "onPause()");
+        Log.d("LOG", "onPause()");
         mSensorManager.unregisterListener(mAccLis);
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        Log.e("LOG", "onDestroy()");
+        Log.d("LOG", "onDestroy()");
         mSensorManager.unregisterListener(mAccLis);
     }
 }
