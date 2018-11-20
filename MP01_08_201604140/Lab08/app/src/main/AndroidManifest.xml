@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LunarView"></activity>
+        <activity android:name=".LunarView" />
     </application>
 
 </manifest>

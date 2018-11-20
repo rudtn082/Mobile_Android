@@ -6,14 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--<FrameLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!--&lt;!&ndash;<com.example.kyungsoo.mp01_08_201604140.MainActivity.LunarView&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/lunar"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="match_parent"/>&ndash;&gt;-->
-
-    <!--</FrameLayout>-->
-
 </android.support.constraint.ConstraintLayout>
