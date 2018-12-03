@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".addmovie" />
-        <activity android:name=".DBHelper"></activity>
+        <activity android:name=".DBHelper" />
     </application>
 
 </manifest>

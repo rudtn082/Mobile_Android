@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -25,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table movies " + "(name text primary key, year integer, director text, rate integer, country text)");
+        db.execSQL("create table movies " + "(_id INTEGER primary key, name text, year integer, director text, rate integer, country text)");
     }
 
     @Override
@@ -34,23 +32,9 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public  boolean insertMovie(String name, int year, String director, int rate, String country) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-
-        contentValues.put("name", name);
-        contentValues.put("year", year);
-        contentValues.put("director", director);
-        contentValues.put("rate", rate);
-        contentValues.put("country", country);
-
-        db.insert("movies", null, contentValues);
-        return true;
-    }
-
-    public Cursor getDate(int id) {
+    public Cursor getDate(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from movies where id=" + id + "", null);
+        Cursor res = db.rawQuery("select * from movies where name=" + name + "", null);
         return res;
     }
 
