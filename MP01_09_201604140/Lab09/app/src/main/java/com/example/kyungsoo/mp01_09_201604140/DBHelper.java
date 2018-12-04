@@ -1,9 +1,6 @@
 package com.example.kyungsoo.mp01_09_201604140;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,26 +25,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS movies");
-        onCreate(db);
-    }
-
-    public Cursor getDate(String name) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from movies where name=" + name + "", null);
-        return res;
-    }
-
-    public int numberOfRows() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int)DatabaseUtils.queryNumEntries(db, MOVIEWS_TABLE_NAME);
-        return numRows;
-    }
-
-    public boolean updateMovie(String name, int year, String director, int rate, String country) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-
-        return true;
     }
 }
