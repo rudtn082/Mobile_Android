@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. 리소스 미디어 재생"></TextView>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/res_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startResAudio"
+            android:text="리소스 오디오 시작"></Button>
+
+        <Button
+            android:id="@+id/res_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopResAudio"
+            android:text="리소스 오디오 정지"></Button>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""></TextView>
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. 파일 미디어 재생"></TextView>
+
+    <EditText
+        android:id="@+id/path"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""></EditText>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/file_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startFileAudio"
+            android:text="파일 오디오 시작"></Button>
+
+        <Button
+            android:id="@+id/file_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopFileAudio"
+            android:text="파일 오디오 정지"></Button>
+    </LinearLayout>
+</LinearLayout>
