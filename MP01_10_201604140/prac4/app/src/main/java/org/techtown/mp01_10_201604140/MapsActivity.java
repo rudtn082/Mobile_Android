@@ -3,6 +3,7 @@ package org.techtown.mp01_10_201604140;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,7 +16,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import java.util.Arrays;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
     private static final LatLng SEOUL = new LatLng(37.566535, 126.977969);
     private static final LatLng DAEJEON = new LatLng(36.350412, 127.384548);
     private static final LatLng SUWEON = new LatLng(37.263573, 127.028601);
